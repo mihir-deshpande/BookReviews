@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% set active_page = "search" %}
+
+{% block main%}
+<div class="container-fluid ">
+</div>
+
+<div class="container-fluid  mt-2">
+    <form id="search-form" class="pt-5 mt-3" method="POST">
+      <h3>Search a book</h3>
+      <div class="form-group">
+        <input type="text" class="form-control" name="search" placeholder="Enter ISBN / Title / Author"><br>
+        <button type="submit" class="btn btn-outline-dark">Search</button>
+      </div>
+    </form>
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}

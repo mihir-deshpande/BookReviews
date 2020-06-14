@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% set active_page = "login" %}
+
+{% block main%}
+
+<div class="container-fluid bg">
+	<div class="row justify-content-center">
+			<form class="form-border" method="post" action="/login">
+				<h3 id="main-header" class="text-center">Login</h3>
+				<div class="form-group">
+				<label for="exampleInputEmail1" class="placeholders">Username</label>
+				<input type="name" class="form-control" name="username" id="username" aria-describedby="emailHelp" placeholder="Enter username">
+				</div>
+				<div class="form-group">
+				<label for="exampleInputPassword1" class="placeholders">Password</label>
+				<input type="password" class="form-control" name="password" id="password" placeholder="Password">
+				</div>
+				<button type="submit" class="btn btn-outline-dark btn-block">Log in</button>
+			</form>
+</div>
+
+
+
+
+
+{% endblock %}

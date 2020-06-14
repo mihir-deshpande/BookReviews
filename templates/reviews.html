@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% set active_page = "review" %}
+
+{% block main%}
+<div class="container-fluid ">
+</div>
+
+<section class="review">
+   
+        {% for row in rows %}
+        <div class="container">
+        <h3 class="text-center">{{ row.title }}</h3><hr><br>
+        </div>
+        <div class="row px-4">
+            <div class="col-md-6">
+
+                <h5>Author: {{ row.author }}</h5><br>
+                <h5>Year: {{ row.year}}</h5><br>
+                <h5>ISBN: {{ row.isbn }}</h5><br>
+                <h5>Average Ratings: {{ review["books"][0]["average_rating"] }}/5</h5><br>
+                <h5>Number of Ratings: {{ review["books"][0]["work_ratings_count"] }}</h5>
+  
+            </div>
+
+            <div class="col-md-6 jumbotron scroll">
+                <h5>Reviews</h5>
+                {% if user_review is defined %}
+
+                  {% for reviews in user_review %}
+                  <div class="alert alert-dark" role="alert">
+                      {{ reviews.username }}: {{reviews.review}}
+                    </div>
+                  {% endfor %}
+               
+                {% else %}
+                  
+                  <div class="alert alert-dark" role="alert">
+                    No reviews yet. Be the first one to write a review.
+                  </div>
+
+                {% endif %}
+            </div>
+        </div>
+    
+</section>
+
+<section class="reviews">
+    <div class="container">
+    <h3>Write a review</h3>
+    <form action="/reviews/{{ row.isbn }}" method="POST">
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Rate this book</label>
+            <select name="rating" id="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="4">5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Enter review </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="user_input"></textarea><br>
+            <button type="submit" class="btn btn-outline-dark">Submit</button>
+          </div>
+    </form>
+</div>
+
+                {% endfor %}
+    
+
+</section>
+
+
+
+</div>
+
+<footer class="small text-center text-muted">
+  Data provided for free by <a href="https://www.goodreads.com/api">Goodreads</a>.
+</footer>
+
+
+
+
+
+{% endblock %}

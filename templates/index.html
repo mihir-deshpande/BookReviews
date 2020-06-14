@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% set active_page = "index"%}
+
+{% block main %}
+<div id="carouselExampleSlidesOnly" class="carousel slide img-carousel " data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="static/book-review.jpg" alt="First slide">
+        <div class="carousel-caption d-sm-block">
+          <h5>Book Review</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container mt-3">
+  <div class="row justify-content-center">
+       <h4 class="text-center px-2" id="main-header">A great way to find your next read</h4>
+  </div>
+  <div class="row justify-content-center mt-2">
+       <p class="text-center px-5" id="light-font">Wondering which book to read next?<br>Search from 5000 books, read reviews<br> and choose the perfect book for your next read.</p>
+  </div>
+  <div class="row justify-content-center">
+    <a href="/login"> <h4 class="text-center" id="main-header">Search for a book</h4></a>
+  </div>
+</div>
+<br>
+<br>
+
+
+  
+
+  
+    
+
+
+
+
+{% endblock %}

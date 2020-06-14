@@ -1,0 +1,85 @@
+body,html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.bg-dark {
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+.header {
+    background-image: url('backgroun.jpg');
+    height: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-border {
+    position: absolute;
+    top: 20vh;
+    background: #ffff;
+    padding: 30px;
+    border: 2px white;
+    /*box-shadow: 0px 0px 10px 0px #000; */
+    border-radius: 10px;
+}
+
+.bg {
+    background: #f5f5ef;
+    height: 100vh;
+
+
+}
+
+.login-form {
+    background-color: grey;
+}
+
+#light-font {
+    font-weight: lighter;
+    color: grey;
+}
+
+#main-header {
+    font-family: 'Oswald', sans-serif;
+}
+
+.placeholders {
+    font-size: small;
+}
+
+#alert {
+    visibility: hidden;
+}
+.review {
+    margin-top: 67px;
+}
+
+.review h5 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.review h3 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.reviews {
+    margin-top: 20px;
+}
+
+.reviews h3 {
+    font-family: 'Oswald', sans-serif;
+    text-align: center; 
+}
+
+@media (min-width: 576px){
+.review .jumbotron {
+    height: 310px;
+    width: 210px;
+}
+}
+.scroll {
+    overflow-y: auto;
+}

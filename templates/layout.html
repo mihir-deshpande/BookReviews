@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+        <link href={{ url_for('static', filename='styles.css') }} rel="stylesheet">
+
+        <title>BookReads</title>
+
+    </head>
+    <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+              <a class="navbar-brand" href="/">BookReviews</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarColor02">
+              {% if not session.user_name %}
+                <ul class="navbar-nav mr-auto mt-2">
+                  <li class="{{ 'active nav-item' if active_page =='index' else 'nav-item'}}">
+                    <a class="nav-link" href="/">Home <!--<span class="sr-only">(current)</span>--></a>
+                  </li>
+                  <li class="{{ 'active nav-item' if active_page =='login' else 'nav-item'}}">
+                    <a class="nav-link" href="/login">Login</a>
+                  </li>
+                  <li class="{{ 'active nav-item' if active_page =='register' else 'nav-item'}}">
+                    <a class="nav-link" href="/register">Register</a>
+                  </li>
+                </ul>
+                {% else %}
+                <ul class="navbar-nav mr-auto mt-2">
+                  <li class="{{ 'active nav-item' if active_page =='index' else 'nav-item'}}">
+                    <a class="nav-link" href="/">Home <!--<span class="sr-only">(current)</span>--></a>
+                  </li>
+                  <li class="{{ 'active nav-item' if active_page =='search' else 'nav-item'}}">
+                    <a class="nav-link" href="/search">Search</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav ml-auto mt-2">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log Out</a>
+                  </li>
+                </ul>
+                {% endif %}
+
+
+              </div>
+            </nav>
+
+      
+          <main>
+              {% block main %}{% endblock %}
+          </main>
+          <!--
+          <footer class="small text-center text-muted">
+            Data provided for free by <a href="https://www.goodreads.com/api">Goodreads</a>.
+          </footer>
+        -->
+        
+      
+    </body>
+ </html>
