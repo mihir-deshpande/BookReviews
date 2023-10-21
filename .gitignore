@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Virtual environment
+env/
+
+# IDE - Visual Studio Code
+.vscode/
+
+# IDE - PyCharm
+.idea/
+
+# Database
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Others
+*.swp
+*.swo
+*.bak
+*.tmp
+.DS_Store
